@@ -1,0 +1,120 @@
+$mainColor: silver;
+
+.window-icon {
+  position: relative;
+
+
+  display: block;
+  padding: 16px;
+
+  user-select: none;
+
+  height: 62px;
+  width: 78px;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  background-position: center;
+
+  h6 {
+    position: absolute;
+    bottom: -0px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 12px;
+
+    padding: 0 25px;
+
+    color: white;
+
+  }
+
+  &:active, &.active {
+    background-color: rgba(0, 0, 255, .3);
+    border: 1px #bfbcbc dot-dash;
+  }
+}
+
+.window-openable {
+
+  display: none;
+
+
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+
+  background-color: $mainColor;
+
+  border: 1px solid #fff;
+  border-right-color: #848484;
+  border-bottom-color: #848484;
+
+  &.active {
+    display: block;
+  }
+
+  .window-tab {
+    position: relative;
+    background: linear-gradient(45deg, #08216b, #a5cef7) !important;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 2px 0 0;
+
+    color: white;
+
+    .tab-name {
+      height: 30px;
+      margin-left: 36px;
+      position: relative;
+
+      padding-top: 8px;
+
+      & span {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left: -30px;
+        top: 4px;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: center;
+      }
+    }
+
+    .tab-options {
+      display: inline-flex;
+      margin-left: auto;
+
+      .options-close {
+        height: 32px;
+        width: 32px;
+        background: url("../img/logo/close.png") no-repeat center;
+        background-size: 12px 12px;
+      }
+
+      .options-min {
+        height: 32px;
+        width: 32px;
+        background: url("../img/logo/minimize.png") no-repeat center;
+        background-size: 12px 12px;
+      }
+
+      .options-max {
+        height: 32px;
+        width: 32px;
+        background: url("../img/logo/maximize.png") no-repeat center;
+        background-size: 12px 12px;
+      }
+    }
+  }
+
+  .window-content {
+    position: absolute;
+    width: 99.5%;
+    height: calc(100% - 35px);
+  }
+
+}
